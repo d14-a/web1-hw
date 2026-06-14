@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0e0f13;
+      --surface:  #16181f;
+      --border:   #272a35;
+      --accent:   #7c6af7;
+      --accent2:  #c3a5f7;
+      --text:     #e8e7f2;
+      --muted:    #7a7a99;
+      --danger:   #f76a6a;
+      --green:    #6af7aa;
+      --radius:   14px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 48px 0;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--accent2);
+      letter-spacing: 0.04em;
+    }
+
+    .date-pill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── HERO / CLOCK ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .clock {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(4rem, 12vw, 9rem);
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      position: relative;
+      display: inline-block;
+    }
+
+    .clock::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .greeting {
+      margin-top: 24px;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      color: var(--accent2);
+      font-style: italic;
+    }
+
+    /* ── MAIN GRID ── */
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr 1fr;
+      gap: 20px;
+      padding: 0 48px 48px;
+      align-items: start;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .card-title {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    /* ── QUICK LINKS ── */
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .link-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 8px;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .link-btn:hover {
+      border-color: var(--accent);
+      background: #1e1d2e;
+    }
+
+    .link-btn .icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    /* ── NOTES ── */
+    .notes-area {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .note-input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      padding: 14px 16px;
+      resize: none;
+      min-height: 130px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .note-input:focus { border-color: var(--accent); }
+    .note-input::placeholder { color: var(--muted); }
+
+    .note-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-ghost { background: var(--border); color: var(--text); }
+
+    .note-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .note-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .note-item .del {
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+    .note-item .del:hover { color: var(--danger); }
+
+    /* ── STATS / MINI WIDGETS ── */
+    .stat-row {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+    }
+
+    .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .stat-label { font-size: 0.82rem; color: var(--muted); }
+    .stat-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    /* mood tracker */
+    .mood-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4px;
+    }
+
+    .mood-btn {
+      font-size: 1.5rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+      background: var(--bg);
+    }
+
+    .mood-btn:hover, .mood-btn.active {
+      border-color: var(--accent);
+      background: #1e1d2e;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── AMBIENT GLOW ── */
+    .glow {
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse at center, rgba(124,106,247,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body > * { position: relative; z-index: 1; }
+
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; padding: 0 20px 40px; }
+      header { padding: 20px 20px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<header>
+  <div class="logo">✦ my space</div>
+  <div class="date-pill" id="datePill">—</div>
+</header>
+
+<div class="hero">
+  <div class="clock" id="clock">00:00:00</div>
+  <div class="greeting" id="greeting">Good evening</div>
+</div>
+
+<main>
+
+  <!-- LEFT: Quick Links -->
+  <section class="card">
+    <div class="card-title">Quick links</div>
+    <div class="links-grid">
+      <a class="link-btn" href="https://gmail.com" target="_blank"><span class="icon">📧</span>Gmail</a>
+      <a class="link-btn" href="https://calendar.google.com" target="_blank"><span class="icon">📅</span>Calendar</a>
+      <a class="link-btn" href="https://youtube.com" target="_blank"><span class="icon">▶️</span>YouTube</a>
+      <a class="link-btn" href="https://github.com" target="_blank"><span class="icon">🐙</span>GitHub</a>
+      <a class="link-btn" href="https://notion.so" target="_blank"><span class="icon">📓</span>Notion</a>
+      <a class="link-btn" href="https://reddit.com" target="_blank"><span class="icon">🌐</span>Reddit</a>
+    </div>
+  </section>
+
+  <!-- MIDDLE: Notes -->
+  <section class="card">
+    <div class="card-title">Quick notes</div>
+    <div class="notes-area">
+      <textarea class="note-input" id="noteInput" placeholder="Jot something down…"></textarea>
+      <div class="note-actions">
+        <button class="btn btn-primary" onclick="addNote()">Save note</button>
+        <button class="btn btn-ghost" onclick="clearInput()">Clear</button>
+      </div>
+      <div class="note-list" id="noteList"></div>
+    </div>
+  </section>
+
+  <!-- RIGHT: Mini stats + mood -->
+  <section style="display:flex;flex-direction:column;gap:20px;">
+    <div class="card">
+      <div class="card-title">Today at a glance</div>
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-label">Day of year</span>
+          <span class="stat-value" id="dayOfYear">—</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Week</span>
+          <span class="stat-value" id="weekNum">—</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Year progress</span>
+          <span class="stat-value" id="yearPct">—</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Days until weekend</span>
+          <span class="stat-value" id="daysWeekend">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">How are you feeling?</div>
+      <div class="mood-row" id="moodRow">
+        <div class="mood-btn" onclick="setMood(this)" title="Terrible">😞</div>
+        <div class="mood-btn" onclick="setMood(this)" title="Meh">😐</div>
+        <div class="mood-btn" onclick="setMood(this)" title="Good">🙂</div>
+        <div class="mood-btn" onclick="setMood(this)" title="Great">😄</div>
+        <div class="mood-btn" onclick="setMood(this)" title="Amazing">🤩</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="footer">Built with just HTML, CSS &amp; JS · <span id="footerTime"></span></footer>
+
+<script>
+  // ── Clock & Date ──
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const now = new Date();
+    const h = pad(now.getHours()), m = pad(now.getMinutes()), s = pad(now.getSeconds());
+    document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('datePill').textContent =
+      `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()} ${now.getFullYear()}`;
+
+    const hour = now.getHours();
+    let greet = 'Good evening';
+    if (hour < 12) greet = 'Good morning';
+    else if (hour < 17) greet = 'Good afternoon';
+    document.getElementById('greeting').textContent = greet;
+
+    document.getElementById('footerTime').textContent = `${h}:${m}`;
+  }
+
+  // ── Stats ──
+  function updateStats() {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = now - start;
+    const oneDay = 1000 * 60 * 60 * 24;
+    const day = Math.floor(diff / oneDay);
+    document.getElementById('dayOfYear').textContent = day;
+
+    const oneJan = new Date(now.getFullYear(), 0, 1);
+    const week = Math.ceil((((now - oneJan) / 86400000) + oneJan.getDay() + 1) / 7);
+    document.getElementById('weekNum').textContent = `#${week}`;
+
+    const endOfYear = new Date(now.getFullYear(), 11, 31);
+    const totalDays = Math.floor((endOfYear - new Date(now.getFullYear(), 0, 1)) / oneDay) + 1;
+    const pct = ((day / totalDays) * 100).toFixed(1);
+    document.getElementById('yearPct').textContent = `${pct}%`;
+
+    const dayOfWeek = now.getDay(); // 0=Sun, 6=Sat
+    let daysLeft = 0;
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+      daysLeft = 0;
+    } else {
+      daysLeft = 6 - dayOfWeek;
+    }
+    document.getElementById('daysWeekend').textContent =
+      daysLeft === 0 ? "It's the weekend!" : daysLeft;
+  }
+
+  // ── Notes ──
+  let notes = JSON.parse(localStorage.getItem('hp_notes') || '[]');
+
+  function renderNotes() {
+    const list = document.getElementById('noteList');
+    list.innerHTML = '';
+    notes.forEach((txt, i) => {
+      const item = document.createElement('div');
+      item.className = 'note-item';
+      const content = document.createElement('span');
+      content.textContent = txt;
+      const del = document.createElement('span');
+      del.className = 'del';
+      del.textContent = '×';
+      del.onclick = () => { notes.splice(i, 1); save(); renderNotes(); };
+      item.appendChild(content);
+      item.appendChild(del);
+      list.appendChild(item);
+    });
+  }
+
+  function save() { localStorage.setItem('hp_notes', JSON.stringify(notes)); }
+
+  function addNote() {
+    const val = document.getElementById('noteInput').value.trim();
+    if (!val) return;
+    notes.unshift(val);
+    save();
+    renderNotes();
+    document.getElementById('noteInput').value = '';
+  }
+
+  function clearInput() { document.getElementById('noteInput').value = ''; }
+
+  document.getElementById('noteInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) addNote();
+  });
+
+  // ── Mood ──
+  function setMood(el) {
+    document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    localStorage.setItem('hp_mood_' + new Date().toDateString(), el.textContent);
+  }
+
+  // restore today's mood
+  const savedMood = localStorage.getItem('hp_mood_' + new Date().toDateString());
+  if (savedMood) {
+    document.querySelectorAll('.mood-btn').forEach(b => {
+      if (b.textContent === savedMood) b.classList.add('active');
+    });
+  }
+
+  // ── Init ──
+  tick();
+  updateStats();
+  renderNotes();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
