@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JoTours — اكتشف الأردن بأسلوبك</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===========================
+       Header
+  ============================ -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="logo">
+        <svg class="mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 24L9 6L14 16L19 6L26 24" stroke="#C2541E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        JoTours
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">الرئيسية</a>
+        <a href="tours.html">الجولات</a>
+        <a href="tour-detail.html">الوجهات</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#" class="btn btn-ghost">تسجيل الدخول</a>
+        <a href="tours.html" class="btn btn-primary">احجز جولة</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===========================
+       Hero — Siq canyon motif
+  ============================ -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <span class="eyebrow">الأردن · البتراء · وادي رم · البحر الميت</span>
+      <h1>اكتشف الأردن<br>بأسلوبك</h1>
+      <p class="lead">من الممرات الصخرية القديمة إلى رمال الصحراء الذهبية وملوحة البحر الميت — جولات يقودها خبراء محليون، مصممة على راحتك.</p>
+
+      <form class="search-bar" action="tours.html" method="get">
+        <input type="text" name="q" placeholder="إلى أين تريد الذهاب؟ (البتراء، وادي رم...)">
+        <button type="submit" class="btn btn-primary">
+          بحث
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Signature canyon silhouette -->
+    <svg class="canyon-svg" viewBox="0 0 1440 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0,180 L0,90 L60,100 L110,60 L170,110 L230,40 L300,95 L360,70 L430,130 L500,55 L580,100 L650,30 L720,90 L800,50 L880,120 L960,60 L1040,105 L1110,45 L1190,95 L1260,65 L1340,115 L1440,80 L1440,180 Z" fill="#F7F2EA" opacity="0.08"/>
+      <path d="M0,180 L0,120 L80,135 L150,100 L220,145 L290,85 L370,140 L440,110 L520,160 L600,95 L680,135 L760,75 L840,125 L920,90 L1000,150 L1080,100 L1160,140 L1240,105 L1320,155 L1440,120 L1440,180 Z" fill="#F7F2EA" opacity="0.15"/>
+      <path d="M0,180 L0,150 L100,165 L180,140 L260,170 L340,130 L420,165 L500,145 L580,175 L660,140 L740,170 L820,135 L900,165 L980,145 L1060,175 L1140,150 L1220,170 L1300,145 L1380,172 L1440,155 L1440,180 Z" fill="#F7F2EA"/>
+    </svg>
+  </section>
+
+  <!-- ===========================
+       Destinations
+  ============================ -->
+  <section id="destinations">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">الوجهات</span>
+          <h2>ثلاث تجارب لا تُنسى</h2>
+        </div>
+        <p>كل وجهة تحمل طابعها الخاص — من حضارة الأنباط إلى صحراء المريخ الأرضية وأملاح البحر الميت.</p>
+      </div>
+
+      <div class="grid-3">
+
+        <!-- Petra -->
+        <a href="tour-detail.html" class="dest-card">
+          <div class="media">
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#E8D9C3"/>
+              <rect x="0" y="0" width="400" height="200" fill="#C2541E" opacity="0.15"/>
+              <path d="M120 200 L120 70 L140 50 L160 70 L160 200" fill="#C2541E" opacity="0.5"/>
+              <path d="M160 200 L160 40 L200 20 L240 40 L240 200" fill="#A03E13" opacity="0.6"/>
+              <path d="M240 200 L240 70 L260 50 L280 70 L280 200" fill="#C2541E" opacity="0.5"/>
+              <rect x="190" y="120" width="20" height="80" fill="#F7F2EA" opacity="0.4"/>
+              <circle cx="200" cy="100" r="14" fill="#F7F2EA" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="body">
+            <span class="tag">موروث عالمي</span>
+            <h3>البتراء</h3>
+            <p class="desc">سِر عبر السيق الضيق لتصل إلى الخزنة المنحوتة في الصخر الوردي — جولة يوم كامل مع مرشد متخصص في تاريخ الأنباط.</p>
+            <div class="meta">
+              <div class="price">45 د.أ <span>للشخص / يوم كامل</span></div>
+              <span class="btn btn-ghost">التفاصيل ←</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Wadi Rum -->
+        <a href="tour-detail.html" class="dest-card">
+          <div class="media">
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#F7F2EA"/>
+              <rect x="0" y="0" width="400" height="200" fill="#B8924A" opacity="0.18"/>
+              <ellipse cx="100" cy="180" rx="180" ry="40" fill="#B8924A" opacity="0.4"/>
+              <ellipse cx="320" cy="190" rx="160" ry="35" fill="#B8924A" opacity="0.5"/>
+              <path d="M250 180 Q260 110 320 100 Q380 110 360 180 Z" fill="#A03E13" opacity="0.5"/>
+              <circle cx="330" cy="40" r="22" fill="#B8924A" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="body">
+            <span class="tag">صحراء حمراء</span>
+            <h3>وادي رم</h3>
+            <p class="desc">رحلة بسيارات الجيب بين الكثبان والجبال الحمراء، تنتهي بليلة في مخيم بدوي تحت سماء مليئة بالنجوم.</p>
+            <div class="meta">
+              <div class="price">60 د.أ <span>للشخص / ليلة واحدة</span></div>
+              <span class="btn btn-ghost">التفاصيل ←</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Dead Sea -->
+        <a href="tour-detail.html" class="dest-card">
+          <div class="media">
+            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="200" fill="#3E6E5E" opacity="0.12"/>
+              <rect x="0" y="120" width="400" height="80" fill="#3E6E5E" opacity="0.35"/>
+              <path d="M0 120 Q100 100 200 120 T400 120 L400 130 Q300 110 200 130 T0 130 Z" fill="#3E6E5E" opacity="0.5"/>
+              <circle cx="320" cy="50" r="26" fill="#B8924A" opacity="0.4"/>
+              <ellipse cx="150" cy="170" rx="40" ry="8" fill="#F7F2EA" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="body">
+            <span class="tag">استجمام</span>
+            <h3>البحر الميت</h3>
+            <p class="desc">طفو لا يُصدّق في أكثر بحيرة ملوحة على وجه الأرض، مع تجربة طين معدني وغروب يلوّن الجبال بالذهبي.</p>
+            <div class="meta">
+              <div class="price">35 د.أ <span>للشخص / يوم</span></div>
+              <span class="btn btn-ghost">التفاصيل ←</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       Featured combo tour
+  ============================ -->
+  <section>
+    <div class="wrap">
+      <div class="featured">
+        <div>
+          <span class="badge">الأكثر حجزًا</span>
+          <h3>جولة الأردن الشاملة — 3 أيام</h3>
+          <p>تجمع بين السيق الأحمر للبتراء، رمال وادي رم الذهبية، وملوحة البحر الميت في رحلة واحدة متكاملة مع إقامة ووجبات ومرشد طوال الرحلة.</p>
+        </div>
+        <div class="price-block">
+          <div class="label">يبدأ من</div>
+          <div class="num">210 د.أ</div>
+          <a href="tour-detail.html" class="btn btn-primary">احجز الآن</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       How it works
+  ============================ -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">كيف تعمل المنصة</span>
+          <h2>حجزك في ثلاث خطوات</h2>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <h4>اختر وجهتك</h4>
+          <p>تصفح الجولات المتاحة في البتراء، وادي رم، والبحر الميت، وقارن البرامج والأسعار.</p>
+        </div>
+        <div class="step">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </div>
+          <h4>حدد التاريخ وعدد الأشخاص</h4>
+          <p>اختر التاريخ المناسب، أضف عدد المشاركين، وشاهد السعر الإجمالي مباشرة.</p>
+        </div>
+        <div class="step">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+          </div>
+          <h4>أكمل الدفع بأمان</h4>
+          <p>ادفع أونلاين بأمان عبر البطاقات الدولية، واستلم تأكيد الحجز فورًا.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       Testimonials
+  ============================ -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">تجارب الزوار</span>
+          <h2>ماذا قالوا عن رحلتهم</h2>
+        </div>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p class="quote">المرشد كان يعرف كل تفصيلة عن تاريخ البتراء، والوقت كان كافي جدًا للاستكشاف والتصوير بدون استعجال.</p>
+          <div class="who">
+            <div class="avatar">سل</div>
+            <div>
+              <div class="name">سارة ل.</div>
+              <div class="from">من فرنسا</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p class="quote">ليلة في وادي رم كانت أجمل تجربة بالرحلة كلها. السماء المليئة بالنجوم والعشاء البدوي شيء ما يتكرر.</p>
+          <div class="who">
+            <div class="avatar">عم</div>
+            <div>
+              <div class="name">عمر م.</div>
+              <div class="from">من الإمارات</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p class="quote">الحجز كان سهل جدًا والتواصل سريع. وصلنا البحر الميت بدون أي تعقيد ووفرنا وقت كبير بالتنسيق.</p>
+          <div class="who">
+            <div class="avatar">جت</div>
+            <div>
+              <div class="name">جون ت.</div>
+              <div class="from">من ألمانيا</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       Footer
+  ============================ -->
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="logo">
+            <svg class="mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 24L9 6L14 16L19 6L26 24" stroke="#B8924A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            JoTours
+          </div>
+          <p class="about">منصة أردنية لحجز الجولات السياحية مع مرشدين محليين موثوقين في البتراء، وادي رم، والبحر الميت وأكثر.</p>
+        </div>
+        <div>
+          <h5>الوجهات</h5>
+          <ul>
+            <li><a href="tour-detail.html">البتراء</a></li>
+            <li><a href="tour-detail.html">وادي رم</a></li>
+            <li><a href="tour-detail.html">البحر الميت</a></li>
+            <li><a href="tours.html">كل الجولات</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>الشركة</h5>
+          <ul>
+            <li><a href="#">من نحن</a></li>
+            <li><a href="#">انضم كمرشد</a></li>
+            <li><a href="#">الوظائف</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>الدعم</h5>
+          <ul>
+            <li><a href="#">الأسئلة الشائعة</a></li>
+            <li><a href="#">سياسة الإلغاء</a></li>
+            <li><a href="#">الشروط والأحكام</a></li>
+            <li><a href="#">الخصوصية</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 JoTours. جميع الحقوق محفوظة.</span>
+        <span>عمّان، الأردن</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
